@@ -7,7 +7,9 @@ let inputDuracao= document.getElementById("duracao")
 let res = document.getElementById("resultado")
 
 function calcular(){
-    console.log("calculando..")
+    if(inputAdultos != '' && inputCriancas != '' && inputDuracao !=''){
+        alert("Preencha todos os dados antes de continuar")
+    }
 
     let adultos= inputAdultos.value
     let criancas= inputCriancas.value
@@ -54,5 +56,4 @@ function bebidasPP(duracao){
         return 1000
     }
 }
-
 
