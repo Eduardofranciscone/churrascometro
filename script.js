@@ -6,15 +6,16 @@ let inputDuracao= document.getElementById("duracao")
 
 let res = document.getElementById("resultado")
 
-function calcular(){
-    if(inputAdultos.value.length == 0 && inputCriancas.value.length == 0 && inputDuracao.value.length == 0){
+function calcular(call){
+    
+    if(inputAdultos.value.length == 0 || inputCriancas.value.length == 0 || inputDuracao.value.length == 0){
         alert("Preencha todos os dados antes de continuar")
         res.innerHTML += ''
         qdtToltalCarne+= ''
         qdtToltalCerveja+= ''
         qdtTotalBebidad+=''
     } else{
-
+    setTimeout(()=>{
     let adultos= inputAdultos.value
     let criancas= inputCriancas.value
     let duracao= inputDuracao.value
@@ -29,9 +30,23 @@ function calcular(){
    res.innerHTML+= `<p> ${qdtToltalCarne/1000}kg de carne`
    res.innerHTML+= `<p> ${Math.ceil(qdtToltalCerveja/355)} latas de cerveja`
    res.innerHTML+= `<p> ${Math.ceil(qdtTotalBebidad/2000)} Garrafas de bebida`
-    }
+   
+   resetar()
+   
+   },100 )
+  
+}
+ return  setTimeout(r(),1000)
 }
 
+function resetar(){
+    inputAdultos.value=""
+    inputCriancas.value=""
+    inputDuracao.value=""
+}
+function r(){
+    res.innerHTML=""
+}
 function carnePP(duracao){
     let carne = 400
     if(duracao >= 6){
