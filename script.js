@@ -31,20 +31,20 @@ function calcular(call){
    res.innerHTML+= `<p> ${Math.ceil(qdtToltalCerveja/355)} latas de cerveja`
    res.innerHTML+= `<p> ${Math.ceil(qdtTotalBebidad/2000)} Garrafas de bebida`
    
-   resetar()
+   resetarInputs()
    
    },100 )
   
 }
- return  setTimeout(r(),1000)
+ return  setTimeout(resetarResultado(),1000)
 }
 
-function resetar(){
+function resetarInputs(){
     inputAdultos.value=""
     inputCriancas.value=""
     inputDuracao.value=""
 }
-function r(){
+function resetarResultado(){
     res.innerHTML=""
 }
 function carnePP(duracao){
