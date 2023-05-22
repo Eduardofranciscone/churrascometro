@@ -9,6 +9,7 @@ let res = document.getElementById("resultado")
 function calcular(call){
     
     if(inputAdultos.value.length == 0 || inputCriancas.value.length == 0 || inputDuracao.value.length == 0){
+        resetarResultado()
         alert("Preencha todos os dados antes de continuar")
         res.innerHTML += ''
         qdtToltalCarne+= ''
@@ -32,11 +33,9 @@ function calcular(call){
    res.innerHTML+= `<p> ${Math.ceil(qdtTotalBebidad/2000)} Garrafas de bebida`
    
    resetarInputs()
-   
    },100 )
-  
 }
- return  setTimeout(resetarResultado(),1000)
+ 
 }
 
 function resetarInputs(){
@@ -45,6 +44,7 @@ function resetarInputs(){
     inputDuracao.value=""
 }
 function resetarResultado(){
+    let res = document.getElementById("resultado")
     res.innerHTML=""
 }
 function carnePP(duracao){
